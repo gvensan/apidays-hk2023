@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    function:
+      definition: ''
+    stream:
+      bindings: {}
+      binders:
+        solace-binder:
+          type: solace
+          environment:
+            solace:
+              java:
+                host: 'tcps://mr-connection-lnqugyxw19n.messaging.solace.cloud:55443'
+                msgVpn: asyncapi-demo
+                clientUsername: solace-cloud-client
+                clientPassword: nj8u91rtte4m88eh0hkhdeoavo
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+server:
+  port: 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
