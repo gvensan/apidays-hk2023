@@ -1,1 +1,156 @@
-{"components":{"schemas":{"Basket":{"x-ep-schema-version":"0.1.0","x-ep-schema-version-id":"685ktj8dk5l","$schema":"http://json-schema.org/draft-07/schema#","x-ep-schema-state-name":"RELEASED","x-ep-schema-name":"Basket","title":"Basket","type":"object","x-ep-application-domain-id":"uod3fchq8s3","required":["id","customerId","state","product","quantity","price"],"x-ep-schema-version-displayname":"","x-ep-shared":"false","x-ep-application-domain-name":"Online Services","x-ep-schema-state-id":"2","x-ep-schema-id":"qxcgxpjb5c4","properties":{"product":{"type":"string"},"quantity":{"type":"integer"},"price":{"type":"number"},"customerId":{"type":"integer"},"id":{"type":"string"},"state":{"type":"string"}}}},"messages":{"Basket":{"x-ep-event-id":"1gnvl0be7va","x-ep-event-version-displayname":"","description":"Lists the items placed into a basket of goods online.","x-ep-application-domain-id":"uod3fchq8s3","schemaFormat":"application/vnd.aai.asyncapi+json;version=2.0.0","x-ep-event-state-name":"RELEASED","x-ep-shared":"false","x-ep-application-domain-name":"Online Services","x-ep-event-version-id":"ffuh6g5glla","payload":{"$ref":"#/components/schemas/Basket"},"x-ep-event-version":"0.1.0","x-ep-event-name":"Basket","contentType":"application/json","x-ep-event-state-id":"2"}}},"channels":{"retail/acme/online/basket/{verb}/v1/{id}":{"subscribe":{"message":{"$ref":"#/components/messages/Basket"}},"parameters":{"verb":{"schema":{"type":"string","enum":["CREATED","VALIDATED","UPDATED"]},"x-ep-enum-state-name":"RELEASED","x-ep-enum-version-displayname":"","x-ep-enum-version":"0.1.0","x-ep-enum-name":"verb","x-ep-enum-state-id":"2","x-ep-application-domain-id":"uod3fchq8s3","x-ep-enum-version-id":"55gxyc2rk7i","x-ep-enum-id":"lf1y5kmll5o","x-ep-shared":"false","x-ep-parameter-name":"verb","x-ep-application-domain-name":"Online Services"},"id":{"schema":{"type":"string"},"x-ep-parameter-name":"id"}}}},"asyncapi":"2.5.0","info":{"x-ep-application-version":"0.1.0","x-ep-application-version-id":"wg6v1ithalz","x-ep-application-id":"bjsowgcbqmz","description":"The Basket writer proxies HTTP requests, forwarding them to the Basket topic in Solace when a user adds a new item using the REST proxy.","x-ep-state-name":"RELEASED","title":"Basket Service - Basket Writer (REST proxy)","x-ep-application-domain-id":"uod3fchq8s3","version":"0.1.0","x-ep-state-id":"2","x-ep-application-domain-name":"Online Services"}}
+{
+  "components": {
+    "schemas": {
+      "Basket": {
+        "x-ep-schema-version": "0.1.0",
+        "x-ep-schema-version-id": "4pw0uqcdf8z",
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "x-ep-schema-state-name": "RELEASED",
+        "x-ep-schema-name": "Basket",
+        "title": "Basket",
+        "type": "object",
+        "x-ep-application-domain-id": "cs84cvdnyrh",
+        "required": [
+          "id",
+          "customerId",
+          "state",
+          "product",
+          "quantity",
+          "price"
+        ],
+        "x-ep-schema-version-displayname": "",
+        "x-ep-shared": "false",
+        "x-ep-application-domain-name": "Online Services",
+        "x-ep-schema-state-id": "2",
+        "x-ep-schema-id": "o1io1i6j0fi",
+        "properties": {
+          "product": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "number"
+          },
+          "customerId": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "messages": {
+      "Basket": {
+        "x-ep-event-id": "w3n7n88btzn",
+        "x-ep-event-version-displayname": "",
+        "description": "Lists the items placed into a basket of goods online.",
+        "x-ep-application-domain-id": "cs84cvdnyrh",
+        "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+        "x-ep-event-state-name": "RELEASED",
+        "x-ep-shared": "false",
+        "x-ep-application-domain-name": "Online Services",
+        "x-ep-event-version-id": "e6pygzw12r3",
+        "payload": {
+          "$ref": "#/components/schemas/Basket"
+        },
+        "x-ep-event-version": "0.1.0",
+        "x-ep-event-name": "Basket",
+        "contentType": "application/json",
+        "x-ep-event-state-id": "2"
+      },
+      "RiskyBasket": {
+        "x-ep-event-version-displayname": "",
+        "description": "A basket which has a risk profile associated with it due to some reason like high quantity threshold",
+        "x-ep-shared": "false",
+        "schemaFormat": "application/vnd.aai.asyncapi+json;version=2.0.0",
+        "payload": {
+          "$ref": "#/components/schemas/Basket"
+        },
+        "contentType": "application/json",
+        "x-ep-event-state-id": "2"
+      }
+    }
+  },
+  "channels": {
+    "retail/acme/online/basket/{verb}/v1/{id}": {
+      "subscribe": {
+        "message": {
+          "$ref": "#/components/messages/Basket"
+        }
+      },
+      "parameters": {
+        "verb": {
+          "schema": {
+            "type": "string",
+            "enum": ["CREATED", "VALIDATED", "UPDATED"]
+          },
+          "x-ep-enum-state-name": "RELEASED",
+          "x-ep-enum-version-displayname": "",
+          "x-ep-enum-version": "0.1.0",
+          "x-ep-enum-name": "verb",
+          "x-ep-enum-state-id": "2",
+          "x-ep-application-domain-id": "cs84cvdnyrh",
+          "x-ep-enum-version-id": "7ua7u23jh0n",
+          "x-ep-enum-id": "9kv4j8823wg",
+          "x-ep-shared": "false",
+          "x-ep-parameter-name": "verb",
+          "x-ep-application-domain-name": "Online Services"
+        },
+        "id": {
+          "schema": {
+            "type": "string"
+          },
+          "x-ep-parameter-name": "id"
+        }
+      }
+    },
+    "retail/acme/online/riskyBasket/{verb}/v1/{id}": {
+      "subscribe": {
+        "message": {
+          "$ref": "#/components/messages/RiskyBasket"
+        }
+      },
+      "parameters": {
+        "verb": {
+          "schema": {
+            "type": "string",
+            "enum": [
+              "CREATED",
+              "VALIDATED",
+              "UPDATED"
+            ]
+          },
+          "x-ep-enum-name": "verb",
+          "x-ep-enum-state-id": "2",
+          "x-ep-enum-id": "6fwmthcsldk",
+          "x-ep-application-domain-name": "Online Services"
+        },
+        "id": {
+          "schema": {
+            "type": "string"
+          },
+          "x-ep-parameter-name": "id"
+        }
+      }
+    }
+  },
+  "asyncapi": "2.5.0",
+  "info": {
+    "x-ep-application-version": "0.1.0",
+    "x-ep-application-version-id": "vo24hrlc6ux",
+    "x-ep-application-id": "3g9sc1k7f5j",
+    "description": "The Basket writer proxies HTTP requests, forwarding them to the Basket topic in Solace when a user adds a new item using the REST proxy.",
+    "x-ep-state-name": "RELEASED",
+    "title": "Basket Service - Basket Writer (REST proxy)",
+    "x-ep-application-domain-id": "cs84cvdnyrh",
+    "version": "0.2.0",
+    "x-ep-state-id": "2",
+    "x-ep-application-domain-name": "Online Services"
+  }
+}
